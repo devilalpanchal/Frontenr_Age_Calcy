@@ -1,0 +1,191 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+}
+
+@font-face {
+    font-family: pop;
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+* {
+    font-family: pop !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:
+        #f0f0f0;
+    font-family: 'Poppins';
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-flex {
+    display: flex;
+    gap: 35px;
+    margin-left: 30px;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.input-container {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.output>h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 65px;
+    color: #854dff;
+}
+
+.output>h1>span {
+    padding: 0;
+    margin: 0;
+    font-weight: 800i;
+    font-size: 65px;
+    color: #151515;
+}
+
+.submit {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color:
+        #864dfe;
+    position: absolute;
+    top: 170px;
+    right: 430px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: black;
+    transition: 5sec;
+    rotate: 90deg;
+}
+
+.input-container>span {
+    font-size: 12px;
+}
+
+.arrow {
+    width: 30px;
+}
+
+input {
+    font: bold;
+    font-size: 25px;
+    color: black;
+    padding: 10px;
+    outline: none;
+    width: 95px;
+    height: 40px;
+}
+
+input:focus {
+    border: 1px solid purple;
+}
+
+.main-container {
+    padding: 30px;
+    border-radius: 10px 10px 0px 10px;
+    border-bottom-right-radius: 150px;
+    width: 580px;
+    height: 445px;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.output {
+    margin-left: 30px;
+}
+
+.attribution {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.attribution a {
+    color: #854dff;
+}
+
+
+@media screen and (max-width:375px) {
+
+    .main-container {
+        margin-top: 50px;
+        border-radius: 20px 20px 0px 20px;
+        border-bottom-right-radius: 100px;
+        width: 340px;
+        height: 480px;
+    }
+
+    .input-flex {
+        display: flex;
+        gap: 15px;
+        margin-left: 20px;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    input {
+        font-size: 20px;
+        padding: 10px;
+        outline: none;
+        width: 70px;
+        height: 40px;
+    }
+
+    .submit {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background-color:
+            #864dfe;
+        position: absolute;
+        top: 185px;
+        right: 150px;
+        cursor: pointer;
+    }
+
+    .submit:hover {
+        background-color: black;
+        transition: 5sec;
+        rotate: 90deg;
+    }
+
+    .output {
+        margin-top: 30px;
+    }
+
+    .attribution {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 50px;
+        width: 280px;
+    }
+
+    .attribution a {
+        color: #854dff;
+    }
+
+}
