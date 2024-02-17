@@ -93,9 +93,9 @@ function Calculate(){
     // output_day.textContent = ` ${ageDay} days`;
     // output_month.textContent = `${ageMonth} Months` ;
     // output_year.textContent = `${ageYears} years` ;
-output_day.innerHTML = ` <i><span style="color: #864dfe;">${ageDay}</span> Day</i>`;
-output_month.innerHTML = ` <span style="color: #864dfe;">${ageMonth}</span> Month`;
-output_year.innerHTML = `<span style="color: #864dfe;">${ageYears}</span> Year`;
+output_day.innerHTML = ` <i><span style="color: #864dfe;">${ageDay}</span> Days</i>`;
+output_month.innerHTML = ` <span style="color: #864dfe;">${ageMonth}</span> Months`;
+output_year.innerHTML = `<span style="color: #864dfe;">${ageYears}</span> Years`;
 
 }else{
     alert("error");
