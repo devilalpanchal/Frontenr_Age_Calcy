@@ -1,54 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="mainContainer">
 
-  <div class="main-container">
-    <div class="input-flex">
-      <div class="input-container">
-        <span>DAY</span>
-        <input type="number" id="day" placeholder="DD">
-        <small class="error-day"></small>
+    <div class="inputContainer">
+      <div class="IIContainer">
+        <label for="birthDay">Day</label>
+        <input type="number" id="birthDay" placeholder="DD" required>
+        <p class="error" id="required"><!-- This field is required --></p>
+        <p class="error" id="dayError"><!-- must be a valid day --></p>
       </div>
-      <div class="input-container">
-        <span>MONTH</span>
-        <input type="number" id="month" placeholder="MM">
-        <small class="error-month"></small>
+
+      <div class="IIContainer">
+        <label for="birthMonth">Month</label>
+        <input type="number" id="birthMonth" placeholder="MM" required>
+        <p class="error" id="required"><!-- This field is required --></p>
+        <p class="error" id="monthError"><!-- must be a valid month --></p>
       </div>
-      <div class="input-container">
-        <span>YEAR</span>
-        <input type="number" id="year" placeholder="YYYY" min="1950">
-        <small class="error-year"></small>
+
+      <div class="IIContainer">
+        <label for="birthYear">Year</label>
+        <input type="number" id="birthYear" placeholder="YYYY" required>
+        <p class="error" id="required"><!-- This field is required --></p>
+        <p class="error" id="yearError"><!-- must be in the past --></p>
       </div>
     </div>
-    <button class="submit">
-      <img src="./assets/images/icon-arrow.svg" alt="" class="arrow">
-    </button>
-    <hr style="width: 85%;margin-left: 30px;">
-
-    <div class="output">
-      <h1 class="output-year poppins-black-italic">--<span>years</span></h1>
-      <h1 class="output-month poppins-black-italic">--<span>months</span></h1>
-      <h1 class="output-day poppins-black-italic">--<span>days</span></h1>
+    <div class="submitContainer">
+      <hr>
+      <button onclick="calculateAge()" class="submitBtn" id="submitBtn">
+        <img src="./assets/images/icon-arrow.svg" alt="submit" srcset="" id="submitImage">
+      </button>
     </div>
+
+    <div id="result" class="result">
+      <h1><span id="Years"> --</span> years</h1>
+      <h1><span id="Months"> --</span> months</h1>
+      <h1><span id="Days"> --</span> days</h1>
+    </div>
+
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Devilal  Panchal</a>.
   </div>
 
   <script src="script.js"></script>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Devilal Panchal</a>.
-  </div>
 </body>
 
 </html>

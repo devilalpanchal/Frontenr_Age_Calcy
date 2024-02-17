@@ -1,206 +1,288 @@
-:root {
-    --White: hsl(0, 0%, 100%);
-    --Off-white: hsl(0, 0%, 94%);
-    --Light-grey: hsl(0, 0%, 86%);
-    --Smokey-grey: hsl(0, 1%, 44%);
-    --Off-black: hsl(0, 0%, 8%);
-    --Purple: hsl(259, 100%, 65%);
-    --Light-red: hsl(0, 100%, 67%);
-}
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 800;
 }
 
-body {
-    background-color:
-        #f0f0f0;
+@font-face {
     font-family: 'Poppins';
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    src: url('path/to/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
-.input-flex {
-    display: flex;
-    gap: 35px;
-    margin-left: 30px;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 80px;
-    margin-top: 20px;
-}
-
-.input-container {
-    display: flex;
-    gap: 2px;
-    flex-direction: column;
-}
-
-.output>h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 65px;
-    color: #864dfe;
-    white-space: none;
-}
-
-.output>h1>span {
-    white-space: none;
-
-    font-weight: 800;
-    font-size: 88px;
-    color: #151515;
-}
-
-.submit {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: none;
-    background-color:
-        #864dfe;
-    position: absolute;
-    top: 240px;
-    right: 380px;
-    cursor: pointer;
-}
-
-.submit:hover {
-    background-color: black;
-    transition: 5sec;
-    rotate: 90deg;
-}
-
-.input-container>span {
-    font-size: 10px;
-}
-
-.arrow {
-    width: 30px;
-}
-
-input {
-    font: bold;
-    font-size: 18px;
-    color: black;
-    padding: 30px;
-    outline: none;
-    width: 150px;
-    height: 40px;
-}
-
-input:focus {
-    border: 1px solid purple;
-}
-
-.main-container {
-    padding: 40px;
-    margin-top: 150px;
-    border-radius: 10px 10px 0px 10px;
-    border-bottom-right-radius: 150px;
-    width: 820px;
-    height: 620px;
-    background-color: #ffffff;
-    border: 1px solid rgb(255, 255, 255);
-}
-
-.output {
-    white-space: none;
-
-    margin-left: 30px;
-}
-
-.attribution {
-    font-size: 15px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.attribution a {
-    color: #854dff;
-}
-
-.MM {
-    background-color: #3e2969;
-}
-
-.number-color {
-    color: #854dff;
-}
-
-.poppins-black-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/fonts/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: italic;
+}
 
-@media screen and (max-width:375px) {
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: italic;
+}
 
-    .main-container {
-        margin-top: 50px;
-        border-radius: 20px 20px 0px 20px;
-        border-bottom-right-radius: 100px;
-        width: 340px;
-        height: 480px;
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/fonts/Poppins-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: hsl(0, 0%, 94%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+    font-family: 'Poppins-Regular', sans-serif;
+}
+
+.mainContainer {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px 20px 150px 20px;
+    padding: 10px;
+    width: 750px;
+    height: 600px;
+    border: 1px solid rgba(213, 213, 213, 0.5);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.608), 0 5px 5px 0 hsla(0, 0%, 91%, 0.57);
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 50px 40px 50px;
+}
+
+.IIContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 10px 0px 30px;
+}
+
+.IIContainer label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: hsl(0, 1%, 44%);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+input {
+    width: 130px;
+    padding: 8px 10px 8px 10px;
+    border-radius: .3rem;
+    border: .6px solid hsl(0, 0%, 86%);
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 800;
+    outline-color: #3b58987f;
+}
+
+input::placeholder{
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.submitContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.submitContainer hr {
+    width: 70%;
+    border: none;
+    height: 1.5px;
+    background-color: #62626227; 
+    margin: 0px 0px 0px 60px; 
+}
+
+.submitBtn {
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: hsl(259, 100%, 65%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotateImage {
+    animation: rotateImage 0.5s ease-out;
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.result {
+    margin-top: -10px;
+}
+
+.result h1{
+    margin-left: 60px;
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Poppins-ExtraBoldItalic', sans-serif;
+    font-style: italic;
+    height: fit-content;
+    color: hsl(0, 0%, 8%);
+}
+
+.result span{
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+    color: hsl(259, 100%, 65%);
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Poppins-ExtraBoldItalic', sans-serif;
+    font-style: italic;
+    height: fit-content;
+    letter-spacing: 5px;
+}
+
+.error {
+    color: hsl(0, 100%, 67%);
+    margin-top: 8px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
     }
 
-    .input-flex {
-        display: flex;
-        gap: 15px;
-        margin-left: 20px;
-        justify-content: start;
-        align-items: center;
-        margin-bottom: 50px;
+    to {
+    opacity: 1;
+    }
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+    padding: 10px;
+    background-color: hsl(0, 0%, 100%);
+    border-top: 1px solid hsl(0, 0%, 100%);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.attribution a {
+    color: #3b5998;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.attribution a:hover {
+    text-decoration: none;
+    color: crimson;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .mainContainer {
+        max-width: 90%;
+        max-height: 70vh;
+        border-radius: 20px 20px 120px 20px;
     }
 
+    .inputContainer {
+        margin: 20px 5px 5px 5px;
+    }
+
+    .IIContainer {
+        margin: 15px 5px;
+    }
+
+    .IIContainer label {
+        font-size: 12px;
+    }
+    
     input {
-        font-size: 20px;
-        padding: 10px;
-        outline: none;
-        width: 70px;
-        height: 40px;
+        width: 100%;
+        padding: 6px 5px 6px 5px; 
+        font-size: 22px;
+    }
+    
+    input::placeholder{
+        font-size: 22px;
     }
 
-    .submit {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: none;
-        background-color:
-            #864dfe;
+    .submitContainer {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .submitContainer hr {
+        width: 93%; 
+        margin: 0px 0px 0px 10px;
+    }
+
+    .submitBtn {
         position: absolute;
-        top: 185px;
-        right: 150px;
-        cursor: pointer;
+        transform: translateX(-50%);
+        left: calc(60px + 35%);
     }
 
-    .submit:hover {
-        background-color: black;
-        transition: 5sec;
-        rotate: 90deg;
-    }
-
-    .output {
+    .result {
         margin-top: 30px;
+    }
+    
+    .result h1{
+        margin-left: 10px;
+        font-size: 40px;
+    }
+    
+    .result span{
+        font-size: 40px;
+    }
+    
+    .error {
+        font-size: 10px;
     }
 
     .attribution {
-        font-size: 15px;
-        text-align: center;
-        margin-top: 50px;
-        width: 280px;
+        font-size: 10px;
+        padding: 5px;
     }
-
-    .attribution a {
-        color: #854dff;
-    }
-
 }

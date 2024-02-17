@@ -1,104 +1,111 @@
-const input_day = document.querySelector('#day')
-const input_month = document.querySelector('#month')
-const input_year = document.querySelector('#year')
 
-const error_day = document.querySelector('error-day')
-const error_month = document.querySelector('error-month')
-const error_year = document.querySelector('error-year')
+// Function to calculate age
+function calculateAge() {
+    // Reset error messages and styles
+    resetErrors();
 
-const submit_button = document.querySelector('.submit')
+    // Get user input
+    const birthDay = parseInt(document.getElementById("birthDay").value);
+    const birthMonth = parseInt(document.getElementById("birthMonth").value);
+    const birthYear = parseInt(document.getElementById("birthYear").value);
 
-const output_year = document.querySelector('.output-year')
-const output_month = document.querySelector('.output-month')
-const output_day = document.querySelector('.output-day')
+    // Get the current date
+    const currentDate = new Date();
 
-
-submit_button.addEventListener('click', Calculate)
-
-input_day.addEventListener("input", (e) => {
-    if (+input_day.value > 31) {
-        error_day.textContent = "Must be a valid date";
-        isValid = false;
-        return;
-    } else {
-        isValid = true;
-        error_day.textContent = "";
+    // Validate day
+    if (isNaN(birthDay) || birthDay < 1 || birthDay > 31) {
+        displayError("dayError", "Must be a valid day");
     }
 
-    if (+input_day.value === 0) {
-        isValid = false;
-        error_day.textContent = "This field is required";
-        isValid = false;
-        return;
-    } else {
-        error_day.textContent = "";
+    // Validate month
+    if (isNaN(birthMonth) || birthMonth < 1 || birthMonth > 12) {
+        displayError("monthError", "Must be a valid month");
     }
 
-});
-
-input_month.addEventListener("input", (e) => {
-    if (+input_month.value > 12) {
-        error_month.textContent = "Must be a valid date";
-        isValid = false;
-        return;
-    } else {
-        isValid = true;
-        error_month.textContent = "";
+    // Validate year
+    if (isNaN(birthYear) || birthYear < 1900 || birthYear > currentDate.getFullYear()) {
+        displayError("yearError", "Must be in the past");
     }
 
-    if (+input_month.value === 0) {
-        isValid = false;
-        error_month.textContent = "This field is required";
-        isValid = false;
-        return;
-    } else {
-        error_month.textContent = "";
+    // Check if any field is empty
+    if (!birthDay || !birthMonth || !birthYear) {
+        // displayError("required", "This field is required");
+        if (!birthDay) {
+            displayError("dayError", "This field is required");
+        }
+        if (!birthMonth) {
+            displayError("monthError", "This field is required");
+        }
+        if (!birthYear) {
+            displayError("yearError", "This field is required");
+        }
     }
 
-});
+    // Check if all validations passed
+    if (!isNaN(birthDay) && !isNaN(birthMonth) && !isNaN(birthYear) && birthDay >= 1 && birthDay <= 31 && birthMonth >= 1 && birthMonth <= 12 && birthYear >= 1900 && birthYear <= currentDate.getFullYear()) {
+        // Calculate age
+        const birthDate = new Date(`${birthMonth}/${birthDay}/${birthYear}`);
+        const ageInMilliseconds = currentDate - birthDate;
+        const ageInSeconds = ageInMilliseconds / 1000;
+        const ageInMinutes = ageInSeconds / 60;
+        const ageInHours = ageInMinutes / 60;
+        const ageInDays = ageInHours / 24;
+        const ageInMonths = ageInDays / 30.44; // average days in a month
+        const ageInYears = ageInDays / 365.25; // average days in a year
 
-input_year.addEventListener("input", (e) => {
-    if (+input_year.value > 2024) {
-        error_year.textContent = "Must be a valid date";
-        isValid = false;
-        return;
-    } else {
-        isValid = true;
-        error_year.textContent = "";
-    }
+        const years = Math.floor(ageInYears);
+        const months = Math.floor(ageInMonths % 12);
+        const days = Math.floor(ageInDays % 30.44);
 
-    if (+input_year.value === 0) {
-        isValid = false;
-        error_year.textContent = "This field is required";
-        isValid = false;
-        return;
-    } else {
-        error_year.textContent = "";
-    }
-
-});
-
-function Calculate() {
-    if (isValid) {
-        let birthday = `${input_month.value}/${input_day.value}/${input_year.value}`;
-
-        console.log(birthday);
-
-        let birthdayObj = new Date(birthday);
-        let ageDiffMill = Date.now() - birthdayObj;
-        let ageDate = new Date(ageDiffMill);
-        let ageYears = ageDate.getUTCFullYear() - 1970;
-        let ageMonth = ageDate.getUTCMonth();
-        let ageDay = ageDate.getUTCDay() - 1;
-        // output_day.textContent = ` ${ageDay} days`;
-        // output_month.textContent = `${ageMonth} Months` ;
-        // output_year.textContent = `${ageYears} years` ;
-        output_day.innerHTML = ` <i><span style="color: #864dfe;">${ageDay}</span> Days</i>`;
-        output_month.innerHTML = ` <span style="color: #864dfe;">${ageMonth}</span> Months`;
-        output_year.innerHTML = `<span style="color: #864dfe;">${ageYears}</span> Years`;
-
-    } else {
-        alert("error");
+        // Update result
+        updateResult(years, months, days);
     }
 }
 
+// Function to update result
+function updateResult(years, months, days) {
+    document.getElementById("Years").innerText = years;
+    document.getElementById("Months").innerText = months;
+    document.getElementById("Days").innerText = days;
+}
+
+// Function to display error messages
+function displayError(errorId, errorMessage) {
+    document.getElementById(errorId).innerText = errorMessage;
+    document.getElementById(errorId).style.display = "block";
+    // Change input border color and label color to red
+    document.getElementById("birthDay").style.borderColor = "red";
+    document.getElementById("birthMonth").style.borderColor = "red";
+    document.getElementById("birthYear").style.borderColor = "red";
+    document.querySelectorAll('label[for^="birth"]').forEach(label => {
+        label.style.color = "red";
+    });
+}
+
+// Function to reset error messages and styles
+function resetErrors() {
+    document.querySelectorAll(".error").forEach(error => {
+        error.innerText = "";
+        error.style.display = "none";
+    });
+    // Reset input border color and label color
+    document.getElementById("birthDay").style.borderColor = "";
+    document.getElementById("birthMonth").style.borderColor = "";
+    document.getElementById("birthYear").style.borderColor = "";
+    document.querySelectorAll('label[for^="birth"]').forEach(label => {
+        label.style.color = "";
+    });
+}
+
+
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+    // Toggle the 'clicked' class on the container
+    document.querySelector('.submitContainer').classList.toggle('clicked');
+
+    // Toggle the 'rotateImage' class on the image
+    document.getElementById('submitImage').classList.toggle('rotateImage');
+
+    // You can also trigger other actions or functions here if needed
+    // calculateAge();
+});
