@@ -8,6 +8,7 @@
     --Light-red: hsl(0, 100%, 67%);
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +33,8 @@ body {
     margin-left: 30px;
     justify-content: start;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    margin-top: 20px;
 }
 
 .input-container {
@@ -45,27 +47,28 @@ body {
     margin: 0;
     padding: 0;
     font-size: 65px;
-    color: #151515;
+    color: #864dfe;
+    white-space: none;
 }
 
 .output>h1>span {
-    padding: 0;
-    margin: 0;
+    white-space: none;
+
     font-weight: 800;
-    font-size: 65px;
+    font-size: 88px;
     color: #151515;
 }
 
 .submit {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: none;
     background-color:
         #864dfe;
     position: absolute;
-    top: 170px;
-    right: 430px;
+    top: 240px;
+    right: 380px;
     cursor: pointer;
 }
 
@@ -87,9 +90,9 @@ input {
     font: bold;
     font-size: 18px;
     color: black;
-    padding: 10px;
+    padding: 30px;
     outline: none;
-    width: 95px;
+    width: 150px;
     height: 40px;
 }
 
@@ -98,16 +101,19 @@ input:focus {
 }
 
 .main-container {
-    padding: 30px;
+    padding: 40px;
+    margin-top: 150px;
     border-radius: 10px 10px 0px 10px;
     border-bottom-right-radius: 150px;
-    width: 580px;
-    height: 445px;
+    width: 820px;
+    height: 620px;
     background-color: #ffffff;
     border: 1px solid rgb(255, 255, 255);
 }
 
 .output {
+    white-space: none;
+
     margin-left: 30px;
 }
 
@@ -120,17 +126,20 @@ input:focus {
 .attribution a {
     color: #854dff;
 }
-.MM{
+
+.MM {
     background-color: #3e2969;
 }
-.number-color{
-color: #854dff;
+
+.number-color {
+    color: #854dff;
 }
+
 .poppins-black-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: italic;
-  }
+}
 
 
 @media screen and (max-width:375px) {
