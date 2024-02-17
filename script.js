@@ -90,9 +90,13 @@ function Calculate(){
     let ageYears = ageDate.getUTCFullYear()- 1970;
     let ageMonth = ageDate.getUTCMonth();
     let ageDay = ageDate.getUTCDay() - 1;
-    output_day.textContent = ageDay;
-    output_month.textContent = ageMonth;
-    output_year.textContent = ageYears;
+    // output_day.textContent = ` ${ageDay} days`;
+    // output_month.textContent = `${ageMonth} Months` ;
+    // output_year.textContent = `${ageYears} years` ;
+output_day.innerHTML = ` <i><span style="color: #864dfe;">${ageDay}</span> Day</i>`;
+output_month.innerHTML = ` <span style="color: #864dfe;">${ageMonth}</span> Month`;
+output_year.innerHTML = `<span style="color: #864dfe;">${ageYears}</span> Year`;
+
 }else{
     alert("error");
 }
