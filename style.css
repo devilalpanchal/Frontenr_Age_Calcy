@@ -33,7 +33,8 @@ body {
     margin-left: 30px;
     justify-content: start;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
+    margin-top: 20px;
 }
 
 .input-container {
@@ -51,9 +52,11 @@ body {
 
 .output>h1>span {
     padding: 0;
+    width: 600px;
+    height: 100px;
     margin: 0;
     font-weight: 800;
-    font-size: 65px;
+    font-size: 88px;
     color: #151515;
 }
 
@@ -88,9 +91,9 @@ input {
     font: bold;
     font-size: 18px;
     color: black;
-    padding: 20px;
+    padding: 30px;
     outline: none;
-    width: 120px;
+    width: 180px;
     height: 40px;
 }
 
@@ -103,8 +106,8 @@ input:focus {
     margin-top: 150px;
     border-radius: 10px 10px 0px 10px;
     border-bottom-right-radius: 150px;
-    width: 870px;
-    height: 850px;
+    width: 820px;
+    height: 700px;
     background-color: #ffffff;
     border: 1px solid rgb(255, 255, 255);
 }
