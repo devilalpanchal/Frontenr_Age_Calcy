@@ -8,16 +8,11 @@
     --Light-red: hsl(0, 100%, 67%);
 }
 
-@font-face {
-    font-family: pop;
-    src: url(./assets/fonts/Poppins-Regular.ttf);
-}
-
 * {
-    font-family: pop !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 800;
 }
 
 body {
@@ -50,13 +45,13 @@ body {
     margin: 0;
     padding: 0;
     font-size: 65px;
-    color: #854dff;
+    color: #151515;
 }
 
 .output>h1>span {
     padding: 0;
     margin: 0;
-    font-weight: 800i;
+    font-weight: 800;
     font-size: 65px;
     color: #151515;
 }
@@ -81,7 +76,7 @@ body {
 }
 
 .input-container>span {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .arrow {
@@ -90,7 +85,7 @@ body {
 
 input {
     font: bold;
-    font-size: 25px;
+    font-size: 18px;
     color: black;
     padding: 10px;
     outline: none;
@@ -125,6 +120,17 @@ input:focus {
 .attribution a {
     color: #854dff;
 }
+.MM{
+    background-color: #3e2969;
+}
+.number-color{
+color: #854dff;
+}
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
 
 
 @media screen and (max-width:375px) {
