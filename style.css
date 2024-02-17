@@ -58,11 +58,13 @@ body {
 }
 
 .mainContainer {
+    margin-top: 150px;
+    margin-bottom: 180px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 20px 20px 150px 20px;
     padding: 10px;
     width: 750px;
-    height: 600px;
+    height: 550px;
     border: 1px solid rgba(213, 213, 213, 0.5);
     box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.608), 0 5px 5px 0 hsla(0, 0%, 91%, 0.57);
 }
@@ -155,7 +157,7 @@ input::placeholder{
     margin-left: 60px;
     animation: fadeIn 1s;
     animation-fill-mode: forwards;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 900;
     font-family: 'Poppins-ExtraBoldItalic', sans-serif;
     font-style: italic;
