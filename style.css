@@ -8,6 +8,7 @@
     --Light-red: hsl(0, 100%, 67%);
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -64,7 +65,7 @@ body {
     background-color:
         #864dfe;
     position: absolute;
-    top: 170px;
+    top: 236px;
     right: 430px;
     cursor: pointer;
 }
@@ -87,9 +88,9 @@ input {
     font: bold;
     font-size: 18px;
     color: black;
-    padding: 10px;
+    padding: 20px;
     outline: none;
-    width: 95px;
+    width: 120px;
     height: 40px;
 }
 
@@ -98,11 +99,12 @@ input:focus {
 }
 
 .main-container {
-    padding: 30px;
+    padding: 40px;
+    margin-top: 150px;
     border-radius: 10px 10px 0px 10px;
     border-bottom-right-radius: 150px;
-    width: 580px;
-    height: 445px;
+    width: 700px;
+    height: 550px;
     background-color: #ffffff;
     border: 1px solid rgb(255, 255, 255);
 }
