@@ -31,9 +31,7 @@ Users should be able to:
 - **Bonus**: See the age numbers animate to their final number when the form is submitted
 
 ### Screenshot
-
-![Agecalcy 2024-02-16 225409](https://github.com/devilalpanchal/Frontenr_Age_Calcy/assets/144801878/062bb890-7d26-453b-8189-c8b05de9f87e)
-shot.jpg)
+![frontentageCalculateriApp](https://github.com/devilalpanchal/Frontenr_Age_Calcy/assets/144801878/93b36c19-06b4-403c-a657-bd456a28a095)
 
 ## My process
 
